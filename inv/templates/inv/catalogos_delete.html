@@ -1,0 +1,30 @@
+{% extends 'base/base.html' %}
+{% block content %}
+    <form method="post">{% csrf_token %}
+        <div class="col-md-8 px-md-5 mb-5">
+            <div class="card border-left-danger shadow h-100 py-2">
+                <div class="card-body">
+                    <div class="row no-gutters align-items-center">
+                        <div class="col mr-2">
+                            <div class="text-xs font-weight-bold text-uppercase mb-1">
+                                <h4 class="text-warning"><b>¿Eliminar esta Categoría?</b></h4>
+                                <h4 class="text-dark"><b>{{ obj.descripcion }}</b></h4>
+                            </div>
+                            <button type="submit" class="btn btn-danger"><i class="fas fa-question-circle"></i>
+                                Si, Eliminar
+                            </button>
+                            <a href="{% url 'inv:categoria_list' %}" class="btn btn-success"><span
+                                    class="fa fa-undo"></span> Cancelar</a>
+                        </div>
+                        <div class="col-auto">
+                            <i class="fas fa-question-circle fa-6x text-gray-300"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+{% endblock content %}
+
+{% block js %}
+{% endblock js %}

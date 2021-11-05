@@ -8,8 +8,8 @@ class ClaseModelo(models.Model):
     estado = models.BooleanField(default=True, verbose_name='Estado')
     fc = models.DateTimeField(auto_now_add=True, verbose_name='Creado')
     fm = models.DateTimeField(auto_now=True, verbose_name='Modificado')
-    uc = models.ForeignKey(User, related_name='usuario_crea', on_delete=models.CASCADE)
-    um = models.ForeignKey(User, related_name='usuario_modifica', on_delete=models.CASCADE)
+    uc = models.ForeignKey(User, on_delete=models.CASCADE)
+    um = models.IntegerField(blank=True, null=True)
 
     class Meta:
         abstract = True
